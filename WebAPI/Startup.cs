@@ -1,3 +1,5 @@
+using Infrastructure.Abstractions;
+using Infrastructure.ConcreteImplementation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,6 +29,7 @@ namespace WebAPI
         {
             services.AddControllers();
             services.AddSwaggerGen();
+            services.AddScoped<IStudentRepository, StudentRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Infrastructure.ConcreteImplementation
 {
-    class BaseEntityRepository<T> : IBaseEntityRepository<T> where T : BaseEntity
+    public class BaseEntityRepository<T> : IBaseEntityRepository<T> where T : BaseEntity
     {
         private List<T> Database;
 
@@ -17,8 +17,12 @@ namespace Infrastructure.ConcreteImplementation
         }
         public T Create(T newObject)
         {
+            int index = 0;
             Database.Add(newObject);
+            Database.Insert(index,newObject);
+            index++;
             return newObject;
+            
         }
 
         public void Delete(int id)

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Infrastructure.ConcreteImplementation
 {
-    class StudentRepository : BaseEntityRepository<Student>, IStudentRepository
+    public class StudentRepository : BaseEntityRepository<Student>, IStudentRepository
     {
         public StudentRepository()
         {
